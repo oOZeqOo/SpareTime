@@ -90,7 +90,7 @@ public class PlayArea {
 		else {
 			
 			declareWinner();
-			System.exit(0);
+			
 			
 		}
 		

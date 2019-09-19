@@ -31,7 +31,7 @@ public class VisualField {
         });
         
         StackPane root = new StackPane();
-        root.setStyle("-fx-background-color: #000000");
+        root.setStyle("-fx-background-color: #FF0000");
         root.getChildren().add(btn);
         playArea.setScene(new Scene(root, 800, 600));
         playArea.show();

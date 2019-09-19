@@ -9,7 +9,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -19,17 +19,19 @@ public class PlayAreaController implements EventHandler {
 	public static PlayArea play = new PlayArea();
 	
 	@FXML
-	public Text playerScore, enemyScore, player1Score = new Text("0"), player2Score = new Text("0");
+	public Text player1Score, player2Score;
 	
 	@FXML
 	public ImageView you1, y2, e1, e2;
+	
+	@FXML
+	public Button button;
 	
 
 	@Override
 	public void handle(Event e) {
 		
 		try {
-			ImageView iv1 = new ImageView(), iv2 = new ImageView(), iv3 = new ImageView(), iv4 = new ImageView();
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation( Main.class.getResource("../PlayArea.fxml") );
 			loader.setController(new PlayAreaController());
@@ -85,20 +87,20 @@ public class PlayAreaController implements EventHandler {
 	         player2Score.setText(Integer.toString(play.getP2Score()));
 	         player1Score.setText(Integer.toString(play.getP1Score()));
 	         
-			((AnchorPane) scene.getRoot()).getChildren().addAll(you1, e1, y2, e2);
+	         //button.
+		     player1Score.setText(Integer.toString(play.player1.getScore()));
+		     player2Score.setText(Integer.toString(play.player2.getScore()));
+			((AnchorPane) scene.getRoot()).getChildren().addAll(you1, e1, y2, e2, player1Score, player2Score);
 			
 			Main.stage.setResizable(false);
 	        Main.stage.setScene(scene);
 	        Main.stage.show();
 	        
 	        play.playGame();
+
+
 	        
-	        ((AnchorPane) scene.getRoot()).getChildren().removeAll(player1Score, player2Score);
-	        
-	        player1Score.setText(Integer.toString(play.player1.getScore()));
-	        player2Score.setText(Integer.toString(play.player2.getScore()));
-	        System.out.println(player1Score);
-	        System.out.println(player2Score);
+
 	        
 		} catch(Exception f) {
 			f.printStackTrace();

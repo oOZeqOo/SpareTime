@@ -1,25 +1,19 @@
 package Controller;
 
 import java.io.FileInputStream;
-import java.text.DecimalFormat;
 
 import DeckOfCards.Deck;
-import PlayArea.PlayArea;
 import application.Main;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
+
 import javafx.scene.text.Text;
 
 public class MainController implements EventHandler{
